@@ -8,7 +8,7 @@ const Dashboard = () => {
   const [allCourse, setAllcourse] = useState({});
   async function getAllCourse() {
     try {
-      const response = await axios.get("http://localhost:5000/allcourse");
+      const response = await axios.get("https://freecodecamp-bxal.vercel.app/allcourse");
       // console.log(response.data);
       setAllcourse(response.data.msg);
     } catch (err) {

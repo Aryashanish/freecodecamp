@@ -9,7 +9,14 @@
     "routes": [
         {
             "src": "/(.*)",
+<<<<<<< HEAD
             "dest": "index.js"
         }
     ]
 }
+=======
+            "dest": "server.js"
+        }
+    ]
+}
+>>>>>>> dcc0024a23ada22613f857bc27a15da27f673e71
