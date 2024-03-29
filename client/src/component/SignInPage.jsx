@@ -33,7 +33,7 @@ const SignInPage = () => {
       "password": password,
     }
     try {
-      axios.post("http://localhost:5000/signin", data)
+      axios.post("https://freecodecamp-bxal.vercel.app/signin", data)
         .then((res) => {
           console.log(res);
           navigate("/dashboard");
