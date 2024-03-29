@@ -18,7 +18,7 @@ const CourseForm = () => {
       };
       console.log("course data ", data);
       
-      const response = await axios.post("http://localhost:5000/courses", data);
+      const response = await axios.post("https://freecodecamp-bxal.vercel.app/courses", data);
 
       console.log(response.data); 
       setTitle('');
