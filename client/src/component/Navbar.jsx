@@ -40,7 +40,7 @@ const Navbar = (props) => {
 
             <div>
                 {props.isSignedIn ? (
-                    <NavLink to="" className="mx-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <NavLink to="/courses" className="mx-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Add Course
                     </NavLink>
                 ) : (
