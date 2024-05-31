@@ -4,6 +4,7 @@ import {auth,provider} from "../firebase/config"
 import {signInWithPopup} from "firebase/auth"
 import DashBoard from "./DashBoard"
 import axios from 'axios';
+import { base_url } from '../Api/api';
 
 const SignInPage = () => {
   const [name, setName] = useState('');
@@ -33,7 +34,7 @@ const SignInPage = () => {
       "password": password,
     }
     try {
-      axios.post("https://freecodecamp-bxal.vercel.app/signin", data)
+      axios.post(`${base_url}/signin`, data)
         .then((res) => {
           console.log(res);
           navigate("/dashboard");

@@ -13,11 +13,11 @@ const PORT = 5000;
 
 app.use(bodyParser.json());
 app.use(cors(
-    {
-        origin: ["https://freecodecamp-nine.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true 
-    }
+    // {
+    //     origin: ["https://freecodecamp-nine.vercel.app"],
+    //     methods: ["POST", "GET"],
+    //     credentials: true 
+    // }
 ));
 mongoose.connect(URL).then( ()=>{
   console.log("DataBase Connected sucessfully");

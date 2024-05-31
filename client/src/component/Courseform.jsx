@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { base_url } from '../Api/api';
 
 const CourseForm = () => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [duration, setDuration] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -16,13 +18,12 @@ const CourseForm = () => {
         title: title,
         duration: duration
       };
-      console.log("course data ", data);
       
-      const response = await axios.post("https://freecodecamp-bxal.vercel.app/courses", data);
-
-      console.log(response.data); 
+      const response = await axios.post(`${base_url}/courses`, data);
+      
       setTitle('');
       setDuration('');
+      navigate("/dashboard");  
     } catch (error) {
       console.error('Error adding course:', error.message);
       setErrorMessage('An error occurred while adding the course');
@@ -48,9 +49,9 @@ const CourseForm = () => {
         onChange={(e) => setDuration(e.target.value)}
         className="block w-full mt-2 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500"
       />
-      <NavLink to="/dashboard"  type="submit" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+      <button type="submit" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
         Add Course
-      </NavLink>
+      </button>
     </form>
     </div>
   );

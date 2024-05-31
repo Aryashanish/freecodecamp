@@ -3,12 +3,14 @@ import Card from './Card';
 import data from '../data/data'; 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { base_url } from '../Api/api';
 
 const Dashboard = () => {
   const [allCourse, setAllcourse] = useState({});
   async function getAllCourse() {
     try {
-      const response = await axios.get("https://freecodecamp-bxal.vercel.app/allcourse");
+      
+      const response = await axios.get(`${base_url}/allcourse`);
       // console.log(response.data);
       setAllcourse(response.data.msg);
     } catch (err) {
